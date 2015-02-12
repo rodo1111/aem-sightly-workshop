@@ -1,0 +1,15 @@
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+	<div class="container">
+		<h1>${properties.title || currentPage.navigationTitle || currentPage.pageTitle || currentPage.title}</h1>
+		<div data-sly-test.validMessage="${properties.message}" data-sly-unwrap>
+			<p>${properties.message}</p>
+			<p>
+				<a href="${properties.linkHref}" class="btn btn-primary btn-lg" role="button">${properties.linkTitle} &raquo;</a>
+			</p>
+		</div>
+		<p data-sly-test="${!validMessage && wcmmode.edit}">
+			Double click to configure the Hero extra elements.
+		</p>
+	</div>
+</div>
