@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:description="Prodigious 2 column page template"
+    jcr:description="Prodigious Sightly 2 column page template"
     jcr:primaryType="cq:Template"
-    jcr:title="Prodigious 2 Column page"
+    jcr:title="Prodigious Sightly 2 Column page"
     allowedPaths="[/content(/.*)?]"
-    ranking="{Long}1"
-    shortTitle="2 Column Page">
+    ranking="{Long}2"
+    shortTitle="Sightly 2 Column Page">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="prodigious/components/global/page/2-column-page"/>
+        sling:resourceType="prodigious/components/global/page/two-column-page-sly"/>
 </jcr:root>

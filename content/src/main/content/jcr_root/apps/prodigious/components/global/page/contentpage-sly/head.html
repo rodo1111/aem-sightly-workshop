@@ -1,0 +1,11 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>${currentPage.title}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <clientlib data-sly-include="/libs/wcm/core/components/init/init.jsp" data-sly-unwrap />
+    <clientlib data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}" data-sly-unwrap>
+	    <clientlib data-sly-call="${clientLib.all @ categories=['prodigious.common']}" data-sly-unwrap />
+	</clientlib>
+</head>
