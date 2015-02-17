@@ -1,0 +1,11 @@
+<div data-sly-test.validConfiguration="${properties.title}" 
+	style="${wcmmode.edit ? 'margin-bottom: 15px; padding: 0 15px 15px; border: 1px dashed lightgray;' : ''}">
+	<div data-sly-test="${wcmmode.edit}">
+		<h4>Tab: ${properties.title}</h4>
+		<p>Drop the content for tab "${properties.title}" below.</p>
+	</div>
+	<div class="tab-content" data-sly-resource="${'tabs-content' @ resourceType='foundation/components/parsys'}"></div>
+</div>
+<p data-sly-test="${!validConfiguration && wcmmode.edit}">
+	Double click to configure the Tab Item component.
+</p>

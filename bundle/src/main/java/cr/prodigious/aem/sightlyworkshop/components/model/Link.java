@@ -4,17 +4,18 @@
 package cr.prodigious.aem.sightlyworkshop.components.model;
 
 /**
- * Entity class for the Breadcrumb Link.
+ * Entity class for the Link.
  * 
  * @author Rodolfo Oviedo
  */
-public class BreadcrumbLink {
+public class Link {
 
 	/**
 	 * Class attributes.
 	 */
 	private String link;
 	private String title;
+	private String name;
 	
 	/**
 	 * @return the link
@@ -42,6 +43,20 @@ public class BreadcrumbLink {
 	 */
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}	
 	
 }

@@ -1,0 +1,30 @@
+<div style="width: 100%; background: lightgray; border: 1px solid black; margin-bottom: 15px; padding: 10px;" data-sly-test="${wcmmode.edit}">
+	<b>Tabs component starts here. Place all the Tab Items components below.</b>
+</div>
+
+<div data-sly-test.isEditMode="${wcmmode.edit}">
+  	<div data-sly-resource="${'tabs-content' @ resourceType='foundation/components/parsys'}"></div>
+</div>
+<div data-sly-test="${!isEditMode}" role="tabpanel" data-sly-use.tabsController="${'cr.prodigious.aem.sightlyworkshop.components.controller.TabsController'}" class="">
+  	<!-- Nav tabs -->
+	<ul data-sly-list.tab="${tabsController.tabs}" class="nav nav-tabs" role="tablist">
+		<li role="presentation" class="active" data-sly-test="${tabList.first}">
+			<a href="#${tab.link}" aria-controls="${tab.link}" role="tab" data-toggle="tab">${tab.title}</a>
+		</li>
+		<li role="presentation" data-sly-test="${!tabList.first}">
+			<a href="#${tab.link}" aria-controls="${tab.link}" role="tab" data-toggle="tab">${tab.title}</a>
+		</li>
+	</ul>
+
+  	<!-- Tab panes -->
+  	<div data-sly-list.tab="${tabsController.tabs}" class="tab-content">
+  		<div data-sly-test="${tabList.first}" role="tabpanel" class="tab-pane fade in active" id="${tab.link}" 
+  			data-sly-resource="${tab.name @ resourceType='prodigious/components/global/content/tabs/tabsItem'}"></div>
+  		<div data-sly-test="${!tabList.first}" role="tabpanel" class="tab-pane fade" id="${tab.link}" 
+  			data-sly-resource="${tab.name @ resourceType='prodigious/components/global/content/tabs/tabsItem'}"></div>
+  	</div>
+</div>
+
+<div style="width: 100%; background: lightgray; border: 1px solid black; margin: 15px 0; padding: 10px;" data-sly-test="${wcmmode.edit}">
+	<b>Tabs component ends here. Place all the Tab Items components above.</b>
+</div>

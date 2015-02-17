@@ -10,10 +10,10 @@ import java.util.List;
 import com.adobe.cq.sightly.WCMUse;
 import com.day.cq.wcm.api.Page;
 
-import cr.prodigious.aem.sightlyworkshop.components.model.BreadcrumbLink;
+import cr.prodigious.aem.sightlyworkshop.components.model.Link;
 
 /**
- * Class to use as a Breadcrumb Controller by extendint WCMUse.
+ * Class to use as a Breadcrumb Controller by extending WCMUse.
  * 
  * @author Rodolfo Oviedo
  */
@@ -32,8 +32,8 @@ public class BreadcrumbController extends WCMUse {
 	 * 
 	 * @return List of links
 	 */
-	public List<BreadcrumbLink> getBreadcrumbLinks() {
-		List<BreadcrumbLink> links = new ArrayList<BreadcrumbLink>();
+	public List<Link> getBreadcrumbLinks() {
+		List<Link> links = new ArrayList<Link>();
 		Page actualPage = getCurrentPage();
 
 		// Get the path of the links for the current page
@@ -56,8 +56,8 @@ public class BreadcrumbController extends WCMUse {
 	 * 
 	 * @return BreadcrumbLink object
 	 */
-	private BreadcrumbLink getBreadcrumbLinkFromPage(Page page) {
-		BreadcrumbLink newBreadcrumbLink = new BreadcrumbLink();
+	private Link getBreadcrumbLinkFromPage(Page page) {
+		Link newBreadcrumbLink = new Link();
 
 		newBreadcrumbLink.setLink(page.getPath());
 		newBreadcrumbLink.setTitle(page.getTitle());

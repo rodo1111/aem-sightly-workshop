@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="Tabs Item component to display content inside a tab"
+    jcr:primaryType="cq:Component"
+    jcr:title="Tabs Item"
+    componentGroup="Prodigious"/>
