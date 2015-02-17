@@ -1,0 +1,12 @@
+<div class="container" data-sly-use.breadcrumbController="${'cr.prodigious.aem.sightlyworkshop.components.controller.BreadcrumbController'}">
+	<div class="row">
+		<div class="col-lg-12">
+			<ol class="breadcrumb" data-sly-list.link="${breadcrumbController.breadcrumbLinks}">
+				<li data-sly-test="${!linkList.last}">
+					<a href="${link.link}.html">${link.title}</a>
+				</li>
+				<li class="active" data-sly-test="${linkList.last}">${link.title}</li>	
+			</ol>
+		</div>
+	</div>
+</div>
