@@ -70,6 +70,12 @@
 			<version>3.0.1</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.sling</groupId>
+			<artifactId>org.apache.sling.models.api</artifactId>
+			<version>1.0.0</version>
+			<scope>provided</scope>
+		</dependency>
     </dependencies>
 
     <!-- ====================================================================== -->
@@ -96,6 +102,10 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>cr.prodigious.aem.aem-sightly-workshop-bundle</Bundle-SymbolicName>
+                        <Bundle-Name>Prodigious Bundle</Bundle-Name>
+						<Bundle-Description>Prodigious Bundle Classes</Bundle-Description>
+						<Export-Package>cr.prodigious.aem.sightlyworkshop.*</Export-Package>
+						<Sling-Model-Packages>cr.prodigious.aem.sightlyworkshop.components.model</Sling-Model-Packages>
                     </instructions>
                 </configuration>
             </plugin>
