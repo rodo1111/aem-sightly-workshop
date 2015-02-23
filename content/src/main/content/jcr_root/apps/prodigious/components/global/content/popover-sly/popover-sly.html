@@ -1,0 +1,8 @@
+<div data-sly-use.popover="cr.prodigious.aem.sightlyworkshop.components.model.Popover" data-sly-unwrap>
+	<button data-sly-test.configValid="${popover.isConfigValid}"
+		type="button" class="btn btn-lg btn-danger" data-toggle="popover" 
+		title="${popover.popoverTitle}" data-content="${popover.popoverMessage}">${popover.buttonTitle}</button>
+</div>
+<div data-sly-test="${!configValid && wcmmode.edit}">
+	Double click to configure the Popover component.
+</div>
