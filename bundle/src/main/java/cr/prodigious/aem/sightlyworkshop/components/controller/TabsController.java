@@ -42,6 +42,7 @@ public class TabsController implements Use {
 	 * Class attributes.
 	 */
 	private Resource tabsResource;
+	private List<Link> tabs;
 
 	/**
 	 * Init method of the Use interface.
@@ -59,22 +60,33 @@ public class TabsController implements Use {
 	 * @return List with the tabs links
 	 */
 	public List<Link> getTabs() {
-		List<Link> tabs = new ArrayList<Link>();
-
-		// Get the children resources
-		Iterator<Resource> tabsChildrenIterator = tabsResource.getChild(
-				NODE_TABS_CONTENT).listChildren();
-		Node actualTab;
-
-		try {
-			// Create each tab item (link) object
-			while (tabsChildrenIterator.hasNext()) {
-				actualTab = tabsChildrenIterator.next().adaptTo(Node.class);
-
-				tabs.add(getTabLinkFromNode(actualTab));
+		// Check if the tabs are already generated
+		if (tabs == null) {
+			Resource tabsContentResource;
+			tabs = new ArrayList<Link>();
+	
+			// Get the tabs content node
+			tabsContentResource = tabsResource.getChild(
+					NODE_TABS_CONTENT);
+			
+			// Check if the tabs content resource is valid
+			if (tabsContentResource != null) {
+				// Get the children resources
+				Iterator<Resource> tabsChildrenIterator = tabsResource.getChild(
+						NODE_TABS_CONTENT).listChildren();
+				Node actualTab;
+		
+				try {
+					// Create each tab item (link) object
+					while (tabsChildrenIterator.hasNext()) {
+						actualTab = tabsChildrenIterator.next().adaptTo(Node.class);
+		
+						tabs.add(getTabLinkFromNode(actualTab));
+					}
+				} catch (Exception e) {
+					LOG.error(e.getMessage());
+				}
 			}
-		} catch (Exception e) {
-			LOG.error(e.getMessage());
 		}
 
 		return tabs;
