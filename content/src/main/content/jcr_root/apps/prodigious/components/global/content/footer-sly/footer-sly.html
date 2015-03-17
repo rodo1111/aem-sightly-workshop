@@ -1,0 +1,17 @@
+
+<p>&copy; Footer component</p>
+
+
+<div class="footer" data-sly-use.copyright="${'cr.prodigious.aem.sightlyworkshop.components.util.PropertyInherited' @ property='copyright'}">
+	Inherited Copyright footer: ${ copyright.property @context="html" }
+	
+	<div class="container">
+	   Passing parameter and format Date:<span data-sly-use.formatter="${'cr.prodigious.aem.sightlyworkshop.components.util.DateFormatting' @ date=properties.customDate || '3/10/14',dateFormat='MMM dd, YYYY'}">${formatter.formatDate}</span>
+    </div>
+    
+	<div>
+		<span data-sly-use.date="${'cr.prodigious.aem.sightlyworkshop.components.util.DateFormatting'}"></span>
+		<span>Last Updated Date: ${date.updatedDate}</span>
+	</div>
+    
+</div>
