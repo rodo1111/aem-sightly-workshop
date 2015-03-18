@@ -3,21 +3,33 @@
  */
 package cr.prodigious.aem.sightlyworkshop.components.model;
 
+import javax.inject.Inject;
+
 import org.apache.commons.lang3.StringUtils;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Model;
 
 /**
  * Entity class for the Modal.
  * 
  * @author Rodolfo Oviedo
  */
+@Model(adaptables = Resource.class)
 public class Modal {
 
 	/**
 	 * Class attributes.
 	 */
+	@Inject
 	private String title;
+	
+	@Inject
 	private String message;
+	
+	@Inject
 	private String closeTitle;
+	
+	@Inject
 	private String buttonTitle;
 
 	/**

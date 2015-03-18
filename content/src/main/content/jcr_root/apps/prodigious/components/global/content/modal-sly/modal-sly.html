@@ -16,7 +16,7 @@
 						<h4 class="modal-title" id="myModalLabel"
 							data-sly-text="${modal.title}">Modal title</h4>
 					</div>
-					<div class="modal-body" data-sly-text="${modal.message}"></div>
+					<div class="modal-body" data-sly-text="${modal.message @ context='html'}"></div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal"
 							data-sly-text="${modal.closeTitle}">Close</button>
