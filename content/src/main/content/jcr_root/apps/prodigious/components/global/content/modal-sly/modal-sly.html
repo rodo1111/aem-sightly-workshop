@@ -1,0 +1,31 @@
+<div data-sly-use.modal="cr.prodigious.aem.sightlyworkshop.components.model.Modal"
+	data-sly-unwrap>
+	<div data-sly-test.configValid="${modal.isConfigValid}" data-sly-unwrap>
+		<button data-sly-text="${modal.buttonTitle}" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+		  Launch demo modal
+		</button>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="${modal.closeTitle}">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel"
+							data-sly-text="${modal.title}">Modal title</h4>
+					</div>
+					<div class="modal-body" data-sly-text="${modal.message}"></div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal"
+							data-sly-text="${modal.closeTitle}">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div data-sly-test="${!configValid && wcmmode.edit}">
+	Double click to configure the Modal component.
+</div>
