@@ -8,19 +8,15 @@
 <div data-sly-test="${!isEditMode}" role="tabpanel" data-sly-use.tabsController="${'cr.prodigious.aem.sightlyworkshop.components.controller.TabsController'}" class="">
   	<!-- Nav tabs -->
 	<ul data-sly-list.tab="${tabsController.tabs}" class="nav nav-tabs" role="tablist">
-		<li role="presentation" class="active" data-sly-test="${tabList.first}">
-			<a href="#${tab.link}" aria-controls="${tab.link}" role="tab" data-toggle="tab">${tab.title}</a>
-		</li>
-		<li role="presentation" data-sly-test="${!tabList.first}">
+		<div data-sly-test.class="${tabList.first ? 'active' : ''}" data-sly-unwrap></div>
+		<li role="presentation" data-sly-attribute.class="${tabList.first ? 'active' : ''}">
 			<a href="#${tab.link}" aria-controls="${tab.link}" role="tab" data-toggle="tab">${tab.title}</a>
 		</li>
 	</ul>
 
   	<!-- Tab panes -->
   	<div data-sly-list.tab="${tabsController.tabs}" class="tab-content">
-  		<div data-sly-test="${tabList.first}" role="tabpanel" class="tab-pane fade in active" id="${tab.link}" 
-  			data-sly-resource="${tab.name @ resourceType='prodigious/components/global/content/tabs/tabsItem'}"></div>
-  		<div data-sly-test="${!tabList.first}" role="tabpanel" class="tab-pane fade" id="${tab.link}" 
+  		<div role="tabpanel" data-sly-attribute.class="${tabList.first ? 'tab-pane fade in active' : 'tab-pane fade'}" id="${tab.link}" 
   			data-sly-resource="${tab.name @ resourceType='prodigious/components/global/content/tabs/tabsItem'}"></div>
   	</div>
 </div>
