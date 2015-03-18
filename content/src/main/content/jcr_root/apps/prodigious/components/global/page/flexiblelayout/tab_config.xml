@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Panel"
+    title="Layout">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <siteconfig
+            jcr:primaryType="cq:Widget"
+            collapsed="{Boolean}false"
+            collapsible="{Boolean}false"
+            xtype="dialogfieldset">
+            <items jcr:primaryType="cq:WidgetCollection">
+                 <layout
+                    	jcr:primaryType="cq:Widget"
+                    	fieldLabel="Layout Type"
+                    	name="./layout"
+						type="radio"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+	                        <layout1
+		                        jcr:primaryType="nt:unstructured"
+		                        text="Layout 1 (2 columns)"
+		                        value="/apps/prodigious/components/global/layouts/layout1.html"/>
+	                        <layout2
+		                        jcr:primaryType="nt:unstructured"
+		                        text="Layout 2 (3 columns)"
+		                        value="/apps/prodigious/components/global/layouts/layout2.html"/>
+	                        <layout3
+		                        jcr:primaryType="nt:unstructured"
+		                        text="Layout 3 (4 columns)"
+		                        value="/apps/prodigious/components/global/layouts/layout3.html"/>
+                        </options>	
+				</layout>
+           </items>
+        </siteconfig>
+    </items>
+</jcr:root>
