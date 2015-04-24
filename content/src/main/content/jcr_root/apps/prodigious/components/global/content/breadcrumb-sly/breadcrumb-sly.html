@@ -2,10 +2,9 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<ol class="breadcrumb" data-sly-list.link="${breadcrumbController.breadcrumbLinks}">
-				<li data-sly-test="${!linkList.last}">
-					<a href="${link.link}.html">${link.title}</a>
+				<li data-sly-attribute.class="${linkList.last ? 'active' : ''}">
+					<a href="${link.link}.html" data-sly-unwrap="${linkList.last}">${link.title}</a>
 				</li>
-				<li class="active" data-sly-test="${linkList.last}">${link.title}</li>	
 			</ol>
 		</div>
 	</div>
